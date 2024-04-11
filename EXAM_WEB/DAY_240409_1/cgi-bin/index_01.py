@@ -9,7 +9,7 @@ sys.stdout = codecs.getwriter('utf-8')(sys.stdout.detach())
 ### Web 브라우저 화면 출력 모드
 def print_browser(result=""):
     # HTML 파일 읽기 -> body 문자열
-    filename = './html/test.html'   # DAY_240409_1(터미널 pwd) 기준 경로
+    filename = './html/test.html'   # 서버관점 : DAY_240409_1(터미널 pwd) 기준 경로
     with open(filename, mode='r', encoding='utf-8') as f:
         # HTML Header
         print('Content-Type: text/html')
@@ -22,7 +22,7 @@ def print_browser(result=""):
 ## 요청 처리 및 브라우징
 ## -----------------------------------------------
 
-### Client 요청 데이터, 즉, Form 데이터 저장 인스턴스
+### Client 요청 데이터, 즉, Form 입력 데이터 저장 인스턴스 생성
 form = cgi.FieldStorage()
 
 ### 데이터 추출
